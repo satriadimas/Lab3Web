@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Lanjutan</title>
+
+    <!-- Menambah Style -->
+    <style>
+      form {
+        display: flex;
+        justify-content: center;
+      }
+
+      form div {
+        margin: 0.8rem 0rem;
+      }
+
+      form div > label {
+        display: inline-block;
+        width: 100px;
+      }
+
+      fieldset {
+        width: fit-content;
+      }
+
+      input[type="text"],
+      textarea,
+      select {
+        width: 80%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        border: 1px solid #197a43;
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50;
+        border: 1px solid #197a43;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .flex {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .mx-1 {
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+      }
+
+      .input-data {
+        display: flex;
+        align-items: center;
+      }
+
+      .justify-right {
+        display: flex;
+        justify-content: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Membuat Form</h1>
+    <form action="#" method="post">
+      <fieldset>
+        <legend>Data Pelanggan</legend>
+        <div class="input-data">
+          <label for="nama">Nama</label>
+          <input type="text" id="nama" name="nama" />
+        </div>
+        <div class="input-data">
+          <label for="alamat">Alamat</label>
+          <textarea id="alamat" name="alamat" cols="20" rows="3"></textarea>
+        </div>
+        <!-- membuat label input radio -->
+        <div class="input-data">
+          <label>Jenis Kelamin</label>
+          <input id="jk_l" type="radio" name="kelamin" value="L" />
+          <label for="jk_l"> Laki-laki </label>
+          <input id="jk_p" type="radio" name="kelamin" value="P" />
+          <label for="jk_p"> Perempuan </label>
+        </div>
+        <!-- membuat option -->
+        <div class="input-data">
+          <label>Asal Kota</label>
+          <select>
+            <option selected>--pilih kota asal--</option>
+            <option>Cikarang</option>
+            <option>Jakarta</option>
+            <option>Karawang</option>
+            <option>Bekasi</option>
+            <option>Subang</option>
+          </select>
+        </div>
+        <!-- membuat checkbox -->
+        <div class="input-data">
+          <label>Hobby</label>
+          <input type="checkbox" name="hobi" value="Hiking" />
+          <label>Hiking</label>
+          <input type="checkbox" name="hobi" value="Cooking" />
+          <label>Cooking</label>
+          <input type="checkbox" name="hobi" value="Acting" />
+          <label>Acting</label>
+          <input type="checkbox" name="hobi" value="Music" />
+          <label>Music</label>
+        </div>
+        <div class="justify-right">
+          <input type="submit" value="Kirim" />
+        </div>
+      </fieldset>
+    </form>
+
+    <div class="flex">
+      <div class="box">
+        <h1>Membuat Tabel</h1>
+        <div class="flex">
+          <!-- Membuat table -->
+          <table class="mx-1" border="1" cellpadding="4" cellspacing="0">
+            <!-- table header -->
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>Fakultas</th>
+                <th>Program Studi</th>
+              </tr>
+            </thead>
+            <!-- table body -->
+            <tbody>
+              <tr>
+                <td>1.</td>
+                <td>Teknik</td>
+                <td>Teknik Informatika</td>
+              </tr>
+              <tr>
+                <td>2.</td>
+                <td>Teknik</td>
+                <td>Teknik Industri</td>
+              </tr>
+              <tr>
+                <td>3.</td>
+                <td>Teknik</td>
+                <td>Teknik Lingkungan</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- menggabungkan Sel data -->
+          <table class="mx-1" border="1" cellpadding="6" cellspacing="0">
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>Fakultas</th>
+                <th>Program Studi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1.</td>
+                <td rowspan="3">Teknik</td>
+                <td>Teknik Informatika</td>
+              </tr>
+              <tr>
+                <td>2.</td>
+                <td>Teknik Industri</td>
+              </tr>
+              <tr>
+                <td>3.</td>
+                <td>Teknik Lingkungan</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="box">
+        <h1 style="margin-bottom: 0">Membuat List</h1>
+        <div class="flex">
+          <div class="mx-1">
+            <!-- Membuat Ordered List -->
+            <section id="order-list">
+              <h2>Ordered List</h2>
+              <ol>
+                <li>Pemrograman Web</li>
+                <li>Sistem Informasi</li>
+                <li>Basis Data 2</li>
+              </ol>
+            </section>
+
+            <!-- Membuat Unordered List -->
+            <section id="unorder-list">
+              <h2>Unordered List</h2>
+              <ul type="square">
+                <li>Jaringan Komputer</li>
+                <li>Struktur Data</li>
+                <li>Algoritma &amp; Pemrograman</li>
+              </ul>
+            </section>
+          </div>
+          <div class="mx-1">
+            <!-- Membuat Description List -->
+            <section id="description-list">
+              <h2>Description List</h2>
+              <dl>
+                <dt>Fakultas Teknik</dt>
+                <dd>Teknik Industri</dd>
+                <dd>Teknik Informatika</dd>
+                <dd>Teknik Lingkungan</dd>
+                <dt>Fakultas Ekonomi dan Bisnis</dt>
+                <dd>Akuntansi</dd>
+                <dd>Manajemen</dd>
+                <dd>Bisnis Digital</dd>
+              </dl>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
